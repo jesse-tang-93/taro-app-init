@@ -1,5 +1,6 @@
 import Components from 'unplugin-vue-components/webpack';
 import NutUIResolver from '@nutui/nutui-taro/dist/resolver';
+import path from "node:path"
 
 const config = {
   projectName: 'miaooo-new',
@@ -31,17 +32,21 @@ const config = {
   compiler: {
     type: 'webpack5',
     prebundle: { enable: false }
-  }, 
-  cache: {
-    enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
   },
-  sass:{
+  cache: {
+    enable: true // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+  },
+  sass: {
     data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`
   },
+  // 路径别名设置
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src'),
+  },
   mini: {
-    webpackChain(chain) {
+    webpackChain (chain) {
       chain.plugin('unplugin-vue-components').use(Components({
-        resolvers: [NutUIResolver({taro: true})]
+        resolvers: [NutUIResolver({ taro: true })]
       }))
     },
     postcss: {
@@ -67,9 +72,9 @@ const config = {
     }
   },
   h5: {
-    webpackChain(chain) {
+    webpackChain (chain) {
       chain.plugin('unplugin-vue-components').use(Components({
-        resolvers: [NutUIResolver({taro: true})]
+        resolvers: [NutUIResolver({ taro: true })]
       }))
     },
     publicPath: '/',
