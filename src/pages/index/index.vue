@@ -1,5 +1,5 @@
 <template>
-  <view class="index">
+  <view class="index flex test-2">
     <view>
       <img src="" alt="" />
     </view>

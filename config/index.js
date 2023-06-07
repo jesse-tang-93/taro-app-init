@@ -19,7 +19,21 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: ['@tarojs/plugin-html'],
+  plugins: [
+    // 添加 taro-plugin-unocss
+    [
+      'taro-plugin-unocss',
+      {
+        preset: {
+          remToRpx: {
+            // 设置 unocss 转 rpx基数，保证1:1 转换。 例如  10rem 转为10rpx
+            baseFontSize: 4,
+          },
+        },
+      },
+    ],
+    '@tarojs/plugin-html'
+  ],
   defineConstants: {
   },
   copy: {
