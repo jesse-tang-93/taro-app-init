@@ -1,6 +1,6 @@
 <script setup>
 import { Dongdong } from '@nutui/icons-vue-taro'
-
+import { useGet } from '@/utils/request'
 const state = reactive({
   msg: '欢迎使用 NutUI4.0 开发小程序',
   msg2: '你成功了～',
@@ -14,6 +14,11 @@ const handleClick = (type, msg, cover = false) => {
   state.msg2 = msg
   state.type = type
   state.cover = cover
+}
+
+const requestData = shallowRef()
+const handleClick2 = async () => {
+  requestData.value = await useGet('/')
 }
 </script>
 
@@ -41,5 +46,7 @@ const handleClick = (type, msg, cover = false) => {
       :type="state.type"
       :cover="state.cover"
     />
+    <button @click="handleClick2">请求</button>
+    {{ requestData }}
   </view>
 </template>

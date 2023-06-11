@@ -59,6 +59,10 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useDelete: typeof import('../src/utils/request')['useDelete']
+  const useGet: typeof import('../src/utils/request')['useGet']
+  const usePost: typeof import('../src/utils/request')['usePost']
+  const usePut: typeof import('../src/utils/request')['usePut']
   const useSlots: typeof import('vue')['useSlots']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
@@ -129,6 +133,10 @@ declare module 'vue' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useDelete: UnwrapRef<typeof import('../src/utils/request')['useDelete']>
+    readonly useGet: UnwrapRef<typeof import('../src/utils/request')['useGet']>
+    readonly usePost: UnwrapRef<typeof import('../src/utils/request')['usePost']>
+    readonly usePut: UnwrapRef<typeof import('../src/utils/request')['usePut']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
@@ -193,6 +201,10 @@ declare module '@vue/runtime-core' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useDelete: UnwrapRef<typeof import('../src/utils/request')['useDelete']>
+    readonly useGet: UnwrapRef<typeof import('../src/utils/request')['useGet']>
+    readonly usePost: UnwrapRef<typeof import('../src/utils/request')['usePost']>
+    readonly usePut: UnwrapRef<typeof import('../src/utils/request')['usePut']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>

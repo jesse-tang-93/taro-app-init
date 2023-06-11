@@ -2,7 +2,7 @@ import type { AxiosError, AxiosRequestConfig, AxiosResponse, InternalAxiosReques
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'https://mock.28yanyu.cn/mock/642b5d1e939061307ed09d1b/example',
+  baseURL: 'http://192.168.31.31:3000',
   timeout: 60000,
 })
 
