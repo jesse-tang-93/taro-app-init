@@ -48,5 +48,6 @@ const handleClick2 = async () => {
     />
     <button @click="handleClick2">请求</button>
     {{ requestData }}
+    <Counter />
   </view>
 </template>
