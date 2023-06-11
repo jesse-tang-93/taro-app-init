@@ -4,6 +4,31 @@ import AutoImport from 'unplugin-auto-import/webpack'
 import NutUIResolver from '@nutui/nutui-taro/dist/resolver';
 import path from "node:path"
 
+
+// webpack 配置
+const commonChain = (chain) => {
+  // 自动导入
+  // https://github.com/antfu/unplugin-auto-import
+  chain.plugin('unplugin-auto-import').use(
+    AutoImport({
+      imports: [
+        'vue',
+        // https://vuejs.org/guide/extras/reactivity-transform.html#refs-vs-reactive-variables
+        'vue/macros',
+      ],
+      // 自动生成 ts 声明文件的位置
+      dts: 'types/auto-imports.d.ts',
+      // 自动导入方法所在的文件目录- 这里添加 utils 和 store
+      dirs: ['src/utils', 'src/store'],
+      vueTemplate: true,
+    }),
+  )
+  chain.plugin('unplugin-vue-components').use(Components({
+    resolvers: [NutUIResolver({ taro: true })]
+  }))
+
+}
+
 const config = {
   projectName: 'miaooo-new',
   date: '2023-6-7',
@@ -34,6 +59,7 @@ const config = {
         },
       },
     ],
+    '@tarojs/plugin-http',
     '@tarojs/plugin-html'
   ],
   defineConstants: {
@@ -61,25 +87,7 @@ const config = {
   },
   mini: {
     webpackChain (chain) {
-      // 自动导入
-      // https://github.com/antfu/unplugin-auto-import
-      chain.plugin('unplugin-auto-import').use(
-        AutoImport({
-          imports: [
-            'vue',
-            // https://vuejs.org/guide/extras/reactivity-transform.html#refs-vs-reactive-variables
-            'vue/macros',
-          ],
-          // 自动生成 ts 声明文件的位置
-          dts: 'types/auto-imports.d.ts',
-          // 自动导入方法所在的文件目录- 这里添加 utils 和 store
-          dirs: ['src/utils', 'src/store'],
-          vueTemplate: true,
-        }),
-      )
-      chain.plugin('unplugin-vue-components').use(Components({
-        resolvers: [NutUIResolver({ taro: true })]
-      }))
+      commonChain(chain)
     },
     postcss: {
       pxtransform: {
@@ -105,25 +113,7 @@ const config = {
   },
   h5: {
     webpackChain (chain) {
-      // 自动导入
-      // https://github.com/antfu/unplugin-auto-import
-      chain.plugin('unplugin-auto-import').use(
-        AutoImport({
-          imports: [
-            'vue',
-            // https://vuejs.org/guide/extras/reactivity-transform.html#refs-vs-reactive-variables
-            'vue/macros',
-          ],
-          // 自动生成 ts 声明文件的位置
-          dts: 'types/auto-imports.d.ts',
-          // 自动导入方法所在的文件目录- 这里添加 utils 和 store
-          dirs: ['src/utils', 'src/store'],
-          vueTemplate: true,
-        }),
-      )
-      chain.plugin('unplugin-vue-components').use(Components({
-        resolvers: [NutUIResolver({ taro: true })]
-      }))
+      commonChain(chain)
     },
     publicPath: '/',
     staticDirectory: 'static',
