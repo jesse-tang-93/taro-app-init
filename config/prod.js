@@ -1,8 +1,9 @@
 module.exports = {
   env: {
-    NODE_ENV: '"production"'
+    NODE_ENV: '"production"',
   },
   defineConstants: {
+    HTTP_BASE_URL: '"http://192.168.31.31:3000/miniApp"'
   },
   mini: {},
   h5: {

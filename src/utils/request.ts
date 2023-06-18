@@ -1,8 +1,9 @@
 import type { AxiosError, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import axios from 'axios'
 
+
 const instance = axios.create({
-  baseURL: 'http://192.168.31.31:3000',
+  baseURL: 'http://192.168.31.31:3000/miniApp',
   timeout: 60000,
 })
 
