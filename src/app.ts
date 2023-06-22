@@ -4,7 +4,7 @@ import { createPinia } from 'pinia'
 
 import 'uno.css'
 import './app.scss'
-
+import './assets/font/iconfont.css'
 // 版本更新
 const updateManager = Taro.getUpdateManager()
 

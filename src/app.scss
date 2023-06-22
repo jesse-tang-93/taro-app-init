@@ -1,0 +1,59 @@
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial,
+    Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+}
+
+// 解决iPhone x 以后的机型 底部安全区域的问题 https://jelly.jd.com/article/6006b1055b6c6a01506c87fd
+.safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+/**
+* nutUi 变量覆盖
+*/
+:root,
+page {
+  --app-primary-bg: #f9f9f9;
+  --nut-primary-color: #fe7301;
+  --nut-primary-color-end: #fa6419;
+  --nut-overlay-bg-color: rgba(0, 0, 0, 0.3);
+  --nut-address-region-tab-line: linear-gradient(
+    90deg,
+    primaryColor 0%,
+    rgba(primaryColor, 0.15) 100%
+  );
+  --nut-tabs-horizontal-tab-line-color: linear-gradient(
+    180deg,
+    primaryColor 0%,
+    rgba(primaryColor, 0.15) 100%
+  );
+  --nut-tabs-vertical-tab-line-color: linear-gradient(
+    180deg,
+    primaryColor 0%,
+    rgba(primaryColor, 0.15) 100%
+  );
+  // --app-primary-bg: #e9f1f3;
+  --app-primary-bg: #f4f6f7;
+  --app-default-fs: 28px;
+  --nut-checkbox-label-margin-left: 10px;
+  // 数字键盘确认按钮
+  --nut-numberkeyboard-key-finish-background-color: #ff7900;
+  // tab
+  --nut-tabs-horizontal-tab-line-color: var(--nut-primary-color);
+  --nut-tabs-titles-item-line-border-radius: 12px;
+  // 分隔线
+  --nut-divider-text-color: #eee;
+  --nut-divider-margin: 30px;
+}
+/**
+* 全局样式
+*/
+.page-container {
+  width: 100vw;
+  min-height: 100vh;
+}
+image {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -12,8 +12,9 @@ export const uploadFile = async (filePath: string) => {
       // 统一文件格式  photo/2023-6-18/time.xxx
       let timer = new Date()
       let address = `${timer.getFullYear()}-${timer.getMonth() + 1}-${timer.getDate()}`
+      // 文件后缀名
       const fileLocalName = filePath.substr(filePath.lastIndexOf('.'))
-      address = `photo/${address}/`
+      address = `home/${address}/`
       const allFilePath = `${address}${timer.getTime()}${fileLocalName}`
       const res = await getOssPrams()
       const { policy, OSSAccessKeyId, signature } = res.data

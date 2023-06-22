@@ -1,6 +1,9 @@
 const defaultConfig = defineAppConfig({
   pages: [
-    'pages/index/index'
+    'pages/index/index',
+    'pages/mine/index',
+    'pages/find/index',
+    'pages/about/index',
   ],
   window: {
     /**
@@ -26,10 +29,31 @@ const defaultConfig = defineAppConfig({
     // 底部窗口的背景色，仅 iOS 支持
     backgroundColorBottom: '#ffffff',
   },
+  tabBar: {
+    custom: true,
+    list: [
+      {
+        pagePath: 'pages/index/index',
+        text: '首页',
+      },
+      {
+        pagePath: 'pages/find/index',
+        text: '发现',
+      },
+      {
+        pagePath: 'pages/about/index',
+        text: '关于',
+      },
+      {
+        pagePath: 'pages/mine/index',
+        text: '我的',
+      },
+    ],
+  },
   /**
  * 小程序端特有属性
  */
-  // entryPagePath: 'pages/index/index', // 指定小程序默认启动路径
+  entryPagePath: 'pages/index/index', // 指定小程序默认启动路径
   debug: true,
   // 接口权限相关设置
   permission: {
@@ -39,8 +63,6 @@ const defaultConfig = defineAppConfig({
   },
   // 后台使用的能力
   requiredBackgroundModes: ['audio', 'location'], // 后台运行时需要的权限类型-后台使用的能力
-  // 需要跳转的小程序列表
-  navigateToMiniProgramAppIdList: [],
 })
 /**
  * wx小程序端特有属性

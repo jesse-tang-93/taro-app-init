@@ -6,6 +6,8 @@ import { useGet, usePost } from '@/utils/request'
 
 import { uploadFile } from '@/api/upload'
 import dayjs from 'dayjs'
+import HomeSwiper from './components/swiper'
+import Entrance from './components/entrance'
 const state = reactive({
   msg: '欢迎使用 NutUI4.0 开发小程序',
   msg2: '你成功了～',
@@ -69,18 +71,18 @@ const toLogin = () => {
   })
 }
 useLoad(() => {
-  Taro.login({
-    success: async function (res) {
-      console.log(res)
-      if (res.code) {
-        //发起网络请求
-        const { updatedAt, createdAt } = await usePost('/user/login', { code: res.code })
-        console.log(dayjs(updatedAt).format('YYYY:MM:DD HH:mm:ss'))
-      } else {
-        console.log('登录失败！' + res.errMsg)
-      }
-    },
-  })
+  // Taro.login({
+  //   success: async function (res) {
+  //     console.log(res)
+  //     if (res.code) {
+  //       //发起网络请求
+  //       const { updatedAt, createdAt } = await usePost('/user/login', { code: res.code })
+  //       console.log(dayjs(updatedAt).format('YYYY:MM:DD HH:mm:ss'))
+  //     } else {
+  //       console.log('登录失败！' + res.errMsg)
+  //     }
+  //   },
+  // })
 })
 </script>
 
@@ -91,34 +93,29 @@ useLoad(() => {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
+.home-page {
+  .home-content {
+    box-sizing: border-box;
+    top: 666px;
+    width: 100vw;
+    min-height: calc(100vh - 666px);
+    background-color: var(--app-primary-bg);
+    z-index: 2;
+    border-radius: 60px 60px 0 0;
+    padding: 0 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+      rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+}
 </style>
 
 <template>
-  <view class="index">
-    <view>
-      <img src="" alt="" />
-    </view>
-    {{ state.msg }} <Dongdong />
-    <view class="btn">
-      <nut-button
-        type="primary"
-        openType="getPhoneNumber"
-        @getphonenumber="wxLogin"
-        @click="toLogin"
-        >登录</nut-button
-      >
-    </view>
-    <nut-toast
-      :msg="state.msg2"
-      v-model:visible="state.show"
-      :type="state.type"
-      :cover="state.cover"
-    />
-    <button @click="handleClick2">请求</button>
-    {{ requestData }}
-    <!-- <Counter /> -->
-    <!-- oss 测试 -->
-    <nut-button type="primary" @click="toUpload">oss图片</nut-button>
-    <img :src="state.testImgSrc" v-if="state.testImgSrc" />
+  <view class="page-container home-page">
+    <HomeSwiper />
+    <div class="home-content absolute">
+      <Entrance />
+    </div>
   </view>
+  <Footer />
 </template>
