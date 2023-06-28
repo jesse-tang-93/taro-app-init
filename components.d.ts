@@ -9,9 +9,15 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Counter: typeof import('./src/components/Counter/index.vue')['default']
     Footer: typeof import('./src/components/Footer/index.vue')['default']
+    NutAvatar: typeof import('@nutui/nutui-taro')['Avatar']
+    NutAvatarGroup: typeof import('@nutui/nutui-taro')['AvatarGroup']
+    NutButton: typeof import('@nutui/nutui-taro')['Button']
+    NutRate: typeof import('@nutui/nutui-taro')['Rate']
     NutSwiper: typeof import('@nutui/nutui-taro')['Swiper']
     NutSwiperItem: typeof import('@nutui/nutui-taro')['SwiperItem']
     NutTabbar: typeof import('@nutui/nutui-taro')['Tabbar']
     NutTabbarItem: typeof import('@nutui/nutui-taro')['TabbarItem']
+    NutTag: typeof import('@nutui/nutui-taro')['Tag']
+    Reviews: typeof import('./src/components/Reviews/index.vue')['default']
   }
 }

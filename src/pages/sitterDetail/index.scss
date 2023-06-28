@@ -1,0 +1,208 @@
+.sitter {
+  font-weight: normal;
+  background-color: var(--app-primary-bg);
+  padding-bottom: 160px;
+  .nut-swiper {
+    image {
+      height: 100%;
+    }
+  }
+  .sitter-content {
+    padding: 0 46px;
+    position: relative;
+    z-index: 6;
+    position: relative;
+    top: -120px;
+    // top: -60px;
+    // background-color: var(--app-primary-bg);
+    .info {
+      .base {
+        .head {
+          width: 220px;
+          height: 220px;
+          border-radius: 50%;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          margin-right: 16px;
+        }
+        .name {
+          font-size: 40px;
+          font-family: PingFang SC;
+          font-weight: 600;
+          color: #111111;
+          flex-grow: 1;
+          margin-bottom: 12px;
+        }
+        // star
+        .h5-view.nut-rate {
+          margin-bottom: 12px;
+          .nut-rate-item {
+            margin-right: 8px;
+          }
+        }
+      }
+      // desc
+      .desc {
+        font-size: 24px;
+        font-family: Adobe Heiti Std;
+        font-weight: normal;
+        color: #111111;
+        padding-top: 20px;
+      }
+      .tag-box {
+        padding-top: 18px;
+        .nut-tag {
+          padding: 8px 24px;
+          font-size: 24px;
+          border-radius: 8px;
+          margin-right: 10px;
+        }
+      }
+    }
+    // platform-tag
+    .platform-tag {
+      padding-top: 36px;
+      .item {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 6px 20px 0px rgba(238, 238, 238, 0.8);
+        .h5-img {
+          width: auto;
+          height: 110px;
+        }
+        .text {
+          font-size: 36px;
+          font-family: Adobe Heiti Std;
+          font-weight: normal;
+          color: #111111;
+        }
+      }
+    }
+    // location-box
+    .location-box {
+      margin-top: 40px;
+      // height: 442px;
+      background: #ffffff;
+      box-shadow: 0px 6px 20px 0px rgba(238, 238, 238, 0.8);
+      border-radius: 10px;
+      .address-text {
+        height: 80px;
+        padding-left: 22px;
+        .text {
+          font-size: 28px;
+          font-family: Adobe Heiti Std;
+          font-weight: normal;
+          color: #111111;
+          padding-left: 12px;
+        }
+      }
+    }
+    // serve-info
+    .serve-info {
+      .title {
+        padding-top: 30px;
+        padding-left: 22px;
+        .text {
+          margin-left: 12px;
+        }
+        padding-bottom: 20px;
+      }
+      .detail {
+        .item {
+          padding-bottom: 26px;
+          padding-left: 70px;
+          padding-right: 22px;
+          .text {
+            font-size: 24px;
+            font-family: Adobe Heiti Std;
+            font-weight: normal;
+            color: #333333;
+          }
+          .money {
+            font-size: 26px;
+            font-family: Adobe Heiti Std;
+            font-weight: normal;
+            color: #111111;
+          }
+        }
+      }
+    }
+    // reviews-box
+    .reviews-box {
+      padding-top: 40px;
+      .title {
+        font-size: 30px;
+        font-family: Adobe Heiti Std;
+        font-weight: normal;
+        color: #111111;
+        line-height: 68px;
+        position: relative;
+        .block {
+          width: 6px;
+          height: 30px;
+          background: #fe7301;
+          border-radius: 3px;
+          margin-right: 12px;
+        }
+      }
+      // link
+      .link {
+        .text {
+          font-size: 26px;
+          font-family: Adobe Heiti Std;
+          font-weight: normal;
+          color: #333333;
+          line-height: 68px;
+        }
+      }
+    }
+    .reviews-count {
+      .count {
+        font-size: 28px;
+        font-family: Adobe Heiti Std;
+        font-weight: normal;
+        color: #333333;
+        line-height: 22px;
+        margin-left: 16px;
+      }
+    }
+    .reviews-list {
+      padding-top: 56px;
+      .review-item {
+        margin-bottom: 46px;
+      }
+    }
+  }
+}
+.btn-box {
+  background: #ffffff;
+  color: #111111;
+  padding-top: 30px;
+  padding-right: 62px;
+  padding-left: 50px;
+  padding-bottom: 30px;
+  box-shadow: 0px -6px 14px 0px rgba(170, 170, 170, 0.1);
+  border-radius: 10px 10px 0px 0px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  .price {
+    font-size: 42px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    margin-right: 46px;
+    flex: 1;
+    align-items: flex-end;
+    .unit {
+      font-size: 30px;
+      margin-left: 5px;
+    }
+  }
+  .h5-button {
+    width: 450px;
+    height: 100px;
+    font-size: 42px;
+    letter-spacing: 4px;
+  }
+}

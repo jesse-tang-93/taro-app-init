@@ -10,7 +10,7 @@ function setSelected(index) {
   appStore.setActiveTabBar(index)
 }
 const tabSwitch = (val, index) => {
-  setSelected(index)
+  appStore.setActiveTabBar(index)
   Taro.switchTab({
     url: pages[index],
   })

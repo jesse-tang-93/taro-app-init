@@ -1,4 +1,4 @@
-import Components from 'unplugin-vue-components/webpack';
+import ComponentsPlugin from 'unplugin-vue-components/webpack';
 import AutoImport from 'unplugin-auto-import/webpack'
 
 import NutUIResolver from '@nutui/nutui-taro/dist/resolver';
@@ -23,7 +23,7 @@ const commonChain = (chain) => {
       vueTemplate: true,
     }),
   )
-  chain.plugin('unplugin-vue-components').use(Components({
+  chain.plugin('unplugin-vue-components').use(ComponentsPlugin({
     resolvers: [NutUIResolver({ taro: true })]
   }))
 
@@ -109,6 +109,9 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    miniCssExtractPluginOption: {
+      ignoreOrder: true, //  Error: chunk common [mini-css-extract-plugin] 暂时关闭这个警告
     }
   },
   h5: {
