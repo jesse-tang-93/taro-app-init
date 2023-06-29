@@ -19,5 +19,6 @@ declare module '@vue/runtime-core' {
     NutTabbarItem: typeof import('@nutui/nutui-taro')['TabbarItem']
     NutTag: typeof import('@nutui/nutui-taro')['Tag']
     Reviews: typeof import('./src/components/Reviews/index.vue')['default']
+    SitterItem: typeof import('./src/components/SitterItem/index.vue')['default']
   }
 }

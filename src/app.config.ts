@@ -4,6 +4,7 @@ const defaultConfig = defineAppConfig({
     'pages/mine/index',
     'pages/find/index',
     'pages/about/index',
+    'pages/sitter/index',
     'pages/sitterDetail/index'
   ],
   window: {
