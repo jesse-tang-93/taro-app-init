@@ -51,6 +51,7 @@ page {
 .page-container {
   width: 100vw;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 image {
   width: 100%;
